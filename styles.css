@@ -1,0 +1,41 @@
+let books = [
+    { id: "101", name: "Java Programming", author: "Herbert Schildt" },
+    { id: "102", name: "Data Structures", author: "Seymour Lipschutz" },
+    { id: "103", name: "DBMS", author: "Raghu Ramakrishnan" }
+];
+// ADD BOOK
+function addBook() {
+    let id = document.getElementById("bookId").value;
+    let name = document.getElementById("bookName").value;
+    let author = document.getElementById("author").value;
+    books.push({ id, name, author });
+    alert("Book Added!");
+}
+// SEARCH BOOK
+function searchBook() {
+    let search = document.getElementById("searchBook").value.toLowerCase();
+    let result = document.getElementById("result");
+    let found = books.find(b => b.name.toLowerCase().includes(search));
+    if (found) {
+        result.innerHTML =
+            `📘 Book Found <br>
+            ID: ${found.id} <br>
+            Name: ${found.name} <br>
+            Author: ${found.author}`;
+    } else {
+        result.innerHTML = "❌ Book not found";
+    }
+}
+// VIEW ALL BOOKS
+function showBooks() {
+    let list = document.getElementById("bookList");
+    list.innerHTML = "<h2>All Books</h2>";
+    books.forEach(book => {
+        list.innerHTML += `
+            <div class="book">
+                <b>ID:</b> ${book.id} <br>
+                <b>Name:</b> ${book.name} <br>
+                <b>Author:</b> ${book.author}
+            </div>
+        `;
+    });
