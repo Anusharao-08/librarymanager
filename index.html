@@ -2,44 +2,75 @@
 <html>
 <head>
     <title>Library Management System</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaa;
+        }
+
+        input {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
 
 <div class="container">
 
-<h1>Library Management System</h1>
+    <h1>Library Management System</h1>
 
-<input type="text" id="bookId" placeholder="Book ID">
-<input type="text" id="bookName" placeholder="Book Name">
-<input type="text" id="author" placeholder="Author Name">
+    <!-- Add Book Section -->
+    <h2>Add Book</h2>
 
-<button onclick="addBook()">Add Book</button>
+    <input type="text" id="bookId" placeholder="Book ID">
+    <input type="text" id="bookName" placeholder="Book Name">
+    <input type="text" id="author" placeholder="Author Name">
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Book Records</title>
-</head>
-<body>
+    <button onclick="addBook()">Add Book</button>
 
-<h2>Book Records</h2>
+    <hr>
 
-<table id="bookTable" border="1">
-    <tr>
-        <th>Book ID</th>
-        <th>Book Name</th>
-        <th>Author</th>
-    </tr>
-</table>
+    <!-- Search Section -->
+    <h2>Search Book</h2>
 
-<h2>Search Book</h2>
+    <input type="text" id="searchBook" placeholder="Enter Book Name">
 
-<input type="text" id="searchBook" placeholder="Enter Book Name">
+    <button onclick="searchBook()">🔍 Search</button>
 
-<button onclick="searchBook()">🔍 Search</button>
+    <p id="result"></p>
 
-<p id="result"></p>
+</div>
 
 <script src="script.js"></script>
 
